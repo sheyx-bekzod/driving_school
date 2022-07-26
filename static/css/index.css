@@ -1,0 +1,10 @@
+.showcontent {
+    display: flex;
+}
+.show_info {
+    margin-left: 10px;
+}
+
+.show_info p {
+    margin-top: 40px;
+}

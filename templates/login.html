@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+
+{% block body %}
+    <form class="col s12 container" action="{{ url_for('login') }}" method="post">
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="First name" id="icon_prefix" type="text" class="validate" name="username">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate" placeholder="password" name="password">
+            </div>
+        </div>
+
+
+        {% for get_flashed_message in get_flashed_messages() %}
+            <p class="red-text">{{ get_flashed_message }}</p>
+        {% endfor %}
+
+        <h6>Haven't got an account ? <a href="{{ url_for('register') }}">Register</a></h6>
+
+        <button class="btn  blue darken-3">Submit</button>
+    </form>
+
+{% endblock %}

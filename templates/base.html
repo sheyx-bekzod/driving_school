@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/users.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper blue darken-3">
+        <div class="hero-wrapper container">
+            <a href="{{ url_for('index') }}" class="brand-logo">Driving school</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% if user.director %}
+                    <li><a href="{{ url_for('users') }}">Users</a></li>
+                {% endif %}
+                {% if user %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

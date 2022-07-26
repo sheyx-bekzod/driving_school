@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Users{% endblock %}
+
+{% block body %}
+    <div class="main_block">
+        <div class="collection">
+            {% for get_user in get_user_list %}
+                <a href="{{ url_for("set_info",get_id=get_user.id) }}"
+                   class="collection-item {% if get_user.admin %}active{% endif %} user_item">{{ get_user.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

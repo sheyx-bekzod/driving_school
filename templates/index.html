@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block body %}
+    <div class="home container">
+        {% if user.director %}
+            <h1>Hello Director</h1>
+        {% endif %}
+
+        <div class="showcontent">
+            <img src="https://www.seekpng.com/png/full/99-995867_driving-school-car-driving-instructor-png.png" alt="">
+            <div class="show_info">
+                <h2 class="blue-text">Driving School</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur dicta dolorem
+                    doloremque facere, facilis hic molestiaenesciunt nostrum omnis perspiciatis placeat tempora velit
+                    vitae voluptates? Consectetur neque saepe voluptates.
+                </p>
+                {% if not user %}
+                    <a href="{{ url_for('login') }}" class="btn blue">Login</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
